@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,8 +38,16 @@ public class VersionService {
         versionRepository.deleteById(id);
     }
 
-    public VersionDTO getVersions() {
-        return null;
+    public List<VersionDTO> getVersions() {
+        List<Version> list = versionRepository.findAll();
+        List<VersionDTO> listToReturn = new ArrayList<>();
+        for (Version v : list) {
+             VersionDTO versionDto = new VersionDTO();
+            versionDto.setAndroidVersion(v.getVersion());
+            versionDto.setAndroidVersion(v.getVersion());
+            listToReturn.add(versionDto);
+      }
+        return listToReturn;
     }
 
     public void updateVersion(String ios, String android, String emergency) {

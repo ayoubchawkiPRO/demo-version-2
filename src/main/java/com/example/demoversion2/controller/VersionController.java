@@ -24,9 +24,9 @@ public class VersionController {
 
 
     @GetMapping("/getv")
-    public ResponseEntity<VersionDTO> getVersions() {
-        VersionDTO versions = versionService.getVersions();
-        return ResponseEntity.ok().body(versions);
+    public List<VersionDTO> getVersions() {
+        List<VersionDTO> versions = versionService.getVersions();
+        return versions;
     }
 
     @PutMapping("/put")

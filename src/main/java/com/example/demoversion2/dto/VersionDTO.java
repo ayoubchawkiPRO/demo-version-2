@@ -5,31 +5,32 @@ import lombok.Data;
 @Data
 public class VersionDTO {
 
-    private String iosVersion;
-    private String androidVersion;
+    private String platform;
+    private String version;
+
 
     public VersionDTO() {
     }
 
     public VersionDTO(String iosVersion, String androidVersion) {
-        this.iosVersion = iosVersion;
-        this.androidVersion = androidVersion;
+        this.version = version;
+        this.platform = platform;
     }
 
     public String getIosVersion() {
-        return iosVersion;
+        return version;
     }
 
     public void setIosVersion(String iosVersion) {
-        this.iosVersion = iosVersion;
+        this.version = iosVersion;
     }
 
     public String getAndroidVersion() {
-        return androidVersion;
+        return platform;
     }
 
     public void setAndroidVersion(String androidVersion) {
-        this.androidVersion = androidVersion;
+        this.platform = androidVersion;
     }
 }
 
